@@ -389,6 +389,7 @@ func (c *Controller) updateMinIOInstanceStatus(minioInstance *miniov1beta1.MinIO
 	// You can use DeepCopy() to make a deep copy of original object and modify this copy
 	// Or create a copy manually for better performance
 	minioInstanceCopy := minioInstance.DeepCopy()
+	minioInstanceCopy.Status.Replicas = minioInstance.GetReplicas()
 	minioInstanceCopy.Status.AvailableReplicas = statefulSet.Status.Replicas
 	// If the CustomResourceSubresources feature gate is not enabled,
 	// we must use Update instead of UpdateStatus to update the Status block of the MinIOInstance resource.

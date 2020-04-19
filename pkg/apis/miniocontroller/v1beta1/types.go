@@ -133,6 +133,7 @@ type MinIOInstanceSpec struct {
 
 // MinIOInstanceStatus is the status for a MinIOInstance resource
 type MinIOInstanceStatus struct {
+	Replicas          int32 `json:"replicas"`
 	AvailableReplicas int32 `json:"availableReplicas"`
 }
 

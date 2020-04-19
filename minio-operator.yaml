@@ -39,7 +39,7 @@ spec:
   additionalPrinterColumns:
     - name: Replicas
       type: integer
-      JSONPath: ".spec.replicas"
+      JSONPath: ".status.replicas"
 ---
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRole
